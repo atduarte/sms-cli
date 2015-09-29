@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
-var     clc = require('cli-color'),
-        async = require('async'),
-        request = require('request'),
-        read = require('read'),
-        Entities = require('html-entities').AllHtmlEntities,
-        entities = new Entities(),
-        config = require('config');
+var _ = require('underscore'),
+    clc = require('cli-color'),
+    async = require('async'),
+    request = require('request'),
+    read = require('read'),
+    Entities = require('html-entities').AllHtmlEntities,
+    entities = new Entities(),
+    config = require('./config');
 
 request = request.defaults({
     baseUrl: config.baseUrl,
@@ -14,18 +15,9 @@ request = request.defaults({
 });
 
 var selectMessages = function (rawMessages, count) {
-    var messages = [], i;
-
-    for (i = 0; i < rawMessages.length  && messages.length < count; i++) {
-
-        if (i != 0 && rawMessages[i].message === rawMessages[i-1].message) {
-            continue;
-        }
-
-        messages.push(rawMessages[i]);
-    }
-
-    return messages.reverse();
+    return _.uniq(rawMessages, false, function (value) { return value.contact.number + '|' + value.message })
+        .splice(0, count)
+        .reverse();git addgit
 };
 
 var printMessages = function (messages) {
@@ -36,9 +28,8 @@ var printMessages = function (messages) {
         //var date = message.received_at || message.sent_at;
         var color = message.received_at ? clc.cyan : clc.white;
         var arrow = message.received_at ? '→' : '←';
-        var contact = entities.decode(message.contact.name || message.contact.number);
 
-        console.log(color('[' + i + '] ' + arrow + ' ' + contact));
+        console.log(color('[' + i + '] ' + arrow + ' ' + entities.decode(message.contact.name)));
         console.log(entities.decode(message.message));
     }
     console.log('');
