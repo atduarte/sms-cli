@@ -1,4 +1,4 @@
 node_modules
 .idea
-config.dist.js
+config.js
 
