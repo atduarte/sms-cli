@@ -29,7 +29,7 @@ WIP
 
         npm install
         sudo chmod +x index.js
-        sudo ln ./index.js /usr/bin/sms-cli
+        sudo ln -s ./index.js /usr/bin/sms-cli
         sms-cli
         
 # Documentation
