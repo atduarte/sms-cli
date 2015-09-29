@@ -23,6 +23,6 @@ Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://sms
         
 # Known Problems
 
-* SMS Gateway API (http://gateway.me) repeats some "manual sent" messages and misses others. We are considering creating our own Android App and API Gateway
+* SMS Gateway API (http://smsgateway.me) repeats some "manual sent" messages and misses others. We are considering creating our own Android App and API Gateway
 
 
