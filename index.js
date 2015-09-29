@@ -17,7 +17,7 @@ request = request.defaults({
 var selectMessages = function (rawMessages, count) {
     return _.uniq(rawMessages, false, function (value) { return value.contact.number + '|' + value.message })
         .splice(0, count)
-        .reverse();git addgit
+        .reverse();
 };
 
 var printMessages = function (messages) {

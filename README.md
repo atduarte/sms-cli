@@ -1,6 +1,5 @@
 # sms-cli (alpha)
-Stealth command-line SMS app. Compatible with Android via SMS Gateway API (http://gateway.me)
-
+Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://gateway.me)
 
 # Usage
 
@@ -21,5 +20,9 @@ Stealth command-line SMS app. Compatible with Android via SMS Gateway API (http:
         sudo chmod +x index.js
         sudo ln ./index.js /usr/bin/sms-cli
         sms-cli
+        
+# Known Problems
+
+* SMS Gateway API (http://gateway.me) repeats some "manual sent" messages and misses others. We are considering creating our own Android App and API Gateway
 
 
