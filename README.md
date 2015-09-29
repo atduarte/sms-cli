@@ -1,5 +1,5 @@
 # sms-cli (alpha)
-Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://gateway.me)
+Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://smsgateway.me)
 
 # Usage
 
