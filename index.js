@@ -3,17 +3,10 @@
 var     clc = require('cli-color'),
         async = require('async'),
         request = require('request'),
-        clear = require('clear'),
         read = require('read'),
         Entities = require('html-entities').AllHtmlEntities,
         entities = new Entities(),
-        config = {
-            email: 'mail@andreduarte.net',
-            password: 'ThatPassword',
-            baseUrl: 'http://smsgateway.me/api/v3/',
-            count: 5,
-            device: 13399
-        };
+        config = require('config');
 
 request = request.defaults({
     baseUrl: config.baseUrl,
