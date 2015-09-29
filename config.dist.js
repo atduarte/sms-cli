@@ -1,7 +1,7 @@
 module.exports = {
+    baseUrl: 'http://smsgateway.me/api/v3/',
     email: '',
     password: '',
-    baseUrl: 'http://smsgateway.me/api/v3/',
-    count: 5,
-    device: null
+    deviceId: null,
+    messageCount: 5
 };

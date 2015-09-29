@@ -37,7 +37,6 @@ var printMessages = function (messages) {
 
 var promptSend = function (messages) {
     var number = undefined,
-        device = messages[0].device_id,
         content = null;
 
     async.waterfall([
@@ -70,15 +69,15 @@ var promptSend = function (messages) {
                 return next(clc.yellow('Message not sent'));
             }
 
-            sendMessage(device, number, content, next);
+            sendMessage(number, content, next);
         }
     ], function (err) {
         if (err) console.log(err);
     });
 };
 
-var sendMessage = function (device, number, message, callback) {
-     request.post({url: 'messages/send', qs: {device: config.device, number: number, message: message}}, function (err, httpResponse, body) {
+var sendMessage = function (number, message, callback) {
+     request.post({url: 'messages/send', qs: {device: config.deviceId, number: number, message: message}}, function (err, httpResponse, body) {
          if (err || httpResponse.statusCode != 200) {
              console.log(err);
              console.log(body);
@@ -96,7 +95,7 @@ request.get('messages', function (err, httpResponse, body) {
         return;
     }
 
-    var messages = selectMessages(JSON.parse(body).result || {}, config.count);
+    var messages = selectMessages(JSON.parse(body).result || {}, config.messageCount);
 
     if (messages.length == 0) {
         console.error(clc.red('No messages to show'));
