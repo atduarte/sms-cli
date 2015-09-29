@@ -22,7 +22,7 @@ var selectMessages = function (rawMessages, count) {
 
 var printMessages = function (messages) {
     var i;
-    for (i = 0; i < config.count && i < messages.length; i++) {
+    for (i = 0; i < messages.length; i++) {
         var message = messages[i];
 
         //var date = message.received_at || message.sent_at;

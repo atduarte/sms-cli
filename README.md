@@ -1,7 +1,17 @@
 # sms-cli (alpha)
-Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://smsgateway.me)
+Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://smsgateway.me).
+
+Able to get last X messages (received and sent) and to send new messages, from your Android Device.
+
+# Screenshots
+
+WIP
 
 # Usage
+
+WIP
+
+# Installation
 
 1. Install ["SMS Gateway API"](https://play.google.com/store/apps/details?id=networked.solutions.sms.gateway.api) app and login or signup.
 
@@ -15,14 +25,22 @@ Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://sms
         cp config.dist.js config.js
         vi config.js # And replace fields with your "SMS Gateway API" info
   
-4. Run it
+4. Get dependencies & Run it
 
+        npm install
         sudo chmod +x index.js
         sudo ln ./index.js /usr/bin/sms-cli
         sms-cli
         
+# Documentation
+
+## Configuration
+
+* email, password (strings) - Email and password used with SMS Gateway API
+* deviceId (number) - Device ID from the Android phone you want to use. Available on the SMS Gateway API app.
+* messageCount (number) - How many messages (received and sent) do you want to show?
+* baseUrl (string) - Base URL from SMS Gateway API. You shouldn't need to change this.
+        
 # Known Problems
 
 * SMS Gateway API (http://smsgateway.me) repeats some "manual sent" messages and misses others. We are considering creating our own Android App and API Gateway
-
-
