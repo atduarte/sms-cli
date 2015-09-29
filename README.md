@@ -1,5 +1,5 @@
 # sms-cli (alpha)
-Stealth SMS sending for Android from CLI, via SMS Gateway API (http://gateway.me).
+Stealth command-line SMS app. Compatible with Android via SMS Gateway API (http://gateway.me)
 
 
 # Usage
