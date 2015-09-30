@@ -3,13 +3,17 @@ Stealth desktop SMS app. Compatible with Android via SMS Gateway API (http://sms
 
 Able to get last X messages (received and sent) and to send new messages, from your Android Device.
 
-# Screenshots
-
-WIP
-
 # Usage
 
-WIP
+![Image](http://i.imgur.com/c9tJiim.png)
+
+#### Steps
+
+**Send To:** Message index (numbers on the left), phone number or nothing (defaults to the sender of the last message).
+
+**Message:** Your message content (new lines not supported)
+
+**Confirmation:** "Y" or "y" to confirm. 
 
 # Installation
 
@@ -17,20 +21,20 @@ WIP
 
 2. Clone  
 
-        git clone https://github.com/atduarte/sms-cli.git
-        cd sms-cli
+        $ git clone https://github.com/atduarte/sms-cli.git
+        $ cd sms-cli
 
 3. Change configurations
 
-        cp config.dist.js config.js
-        vi config.js # And replace fields with your "SMS Gateway API" info
+        $ cp config.dist.js config.js
+        $ vi config.js # And replace fields with your "SMS Gateway API" info
   
 4. Get dependencies & Run it
 
-        npm install
-        sudo chmod +x index.js
-        sudo ln -s ./index.js /usr/bin/sms-cli
-        sms-cli
+        $ npm install
+        $ sudo chmod +x index.js
+        $ sudo ln -s ./index.js /usr/bin/sms-cli
+        $ sms-cli
         
 # Documentation
 
