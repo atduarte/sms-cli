@@ -7,6 +7,9 @@ Able to get last X messages (received and sent) and to send new messages, from y
 
 ![Image](http://i.imgur.com/c9tJiim.png)
 
+
+Cyan header represents the received messages.
+
 #### Steps
 
 **Send To:** Message index (numbers on the left), phone number or nothing (defaults to the sender of the last message).
